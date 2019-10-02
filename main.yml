@@ -1,0 +1,12 @@
+---
+- name: test playbook
+  hosts: all
+  connection: local
+  
+  - name: Push command
+    junos_command:
+      commands: show version
+    register: variable
+  - name: Print
+    debug:
+      var: variable
