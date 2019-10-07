@@ -2,7 +2,7 @@
 - name: test playbook
   hosts: all
   connection: netconf
-  
+  tasks:
   - name: Push command
     junos_command:
       commands: show version
