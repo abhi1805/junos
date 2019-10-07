@@ -1,7 +1,7 @@
 ---
 - name: test playbook
   hosts: all
-  connection: network_cli
+  connection: netconf
   tasks:
   - name: Push command
     junos_command:
