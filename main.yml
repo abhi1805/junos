@@ -3,9 +3,9 @@
   hosts: all
   connection: netconf
   tasks:
-  - name: Push command
-    junos_command:
-      commands: show version
+  - name: run show version on remote devices
+  junos_command:
+    commands: show version
     register: variable
   - name: Print
     debug:
