@@ -2,7 +2,8 @@
 - name: test playbook
   hosts: all
   connection: netconf
-- name: run show version on remote devices
-  junos_command:
-    commands: show version
-  register: variable
+  tasks:
+  - name: run show version on remote devices
+    junos_command:
+      commands: show version
+    register: variable
