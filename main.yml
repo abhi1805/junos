@@ -4,6 +4,7 @@
   connection: netconf
   gather_facts: no
   tasks:
-  - name: configure hostname and domain name
-    junos_system:
-      hostname: agaw_junos
+  - name: load configure lines into device
+    junos_config:
+      lines:
+        - set vlans vlan01 description "Test vlan"
