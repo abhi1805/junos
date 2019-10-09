@@ -4,7 +4,8 @@
   connection: netconf
   gather_facts: no
   tasks:
-  - name: load configure lines into device
-    junos_config:
-      lines:
-        - set vlans vlan01 description "Test vlan"
+  - name: Estrazione facts
+    junos_facts:
+      timeout: 1000
+      config_format: json
+      gather_subset:
