@@ -2,10 +2,10 @@
 - name: test playbook
   hosts: all
   connection: netconf
-  gather_facts: no
+  gather_facts: false
+  roles:
+  - Juniper.junos
   tasks:
-  - name: Estrazione facts
-    junos_facts:
-      timeout: 1000
-      config_format: json
-      gather_subset:
+  - name: Test role
+    junos_config:
+      backup: yes
