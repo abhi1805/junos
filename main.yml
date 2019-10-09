@@ -4,7 +4,5 @@
   connection: netconf
   gather_facts: no
   tasks:
-  - name: run show version on remote devices
-    junos_command:
-      commands: show version
-    register: variable
+  - name: collect default set of facts
+    junos_facts:
