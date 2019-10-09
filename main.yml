@@ -4,7 +4,6 @@
   connection: netconf
   gather_facts: no
   tasks:
-  - name: Set VLAN access and trunking
-    junos_config:
-      lines:
-      - set vlans vlan02 vlan-id 6
+  - name: configure hostname and domain name
+    junos_system:
+      hostname: agaw_junos
