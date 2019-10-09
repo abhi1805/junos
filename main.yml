@@ -2,6 +2,7 @@
 - name: test playbook
   hosts: all
   connection: netconf
+  gather_facts: no
   tasks:
   - name: run show version on remote devices
     junos_command:
