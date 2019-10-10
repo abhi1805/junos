@@ -10,16 +10,16 @@
     junos_command:
       commands: show interfaces terse
     register: variable
-  - name: Print version
+  - name: Print state of interfaces
     debug:
-      var: variable.stdout
+      var: variable
     tags: interfaces
     
   - name: Show routing table
     junos_command:
       commands: show route
     register: variable
-  - name: Print version
+  - name: Print routing table
     debug:
-      var: variable.stdout
+      var: variable
     tags: route  
