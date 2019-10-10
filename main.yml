@@ -6,10 +6,20 @@
   roles:
   - Juniper.junos
   tasks:
-  - name: Test role
+  - name: Show interfaces
     junos_command:
       commands: show interfaces terse
     register: variable
   - name: Print version
     debug:
       var: variable.stdout_lines
+    tags: interfaces
+    
+  - name: Show routing table
+    junos_command:
+      commands: show route
+    register: variable
+  - name: Print version
+    debug:
+      var: variable.stdout
+    tags: route  
