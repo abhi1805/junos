@@ -26,6 +26,6 @@
   - name: Print output
     debug:
       msg: 
-      - {{ routes }}
-      - {{ interfaces }}
+      - "{{ routes }}"
+      - "{{ interfaces }}"
     tags: print
