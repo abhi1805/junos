@@ -8,8 +8,8 @@
   tasks:
   - name: Test role
     junos_command:
-      commands: show version
+      commands: show interfaces terse
     register: variable
   - name: Print version
     debug:
-      var: variable
+      var: variable.stdout_lines
