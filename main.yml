@@ -13,7 +13,7 @@
   - name: Print state of interfaces
     debug:
       msg:
-  tags: interfaces
+    tags: interfaces
  
   - name: SHOW ROUTE
     junos_command:
@@ -22,7 +22,7 @@
   - name: Print output
     debug: 
       var: route
-  tags: route
+    tags: route
     
 
 #    tags: print
