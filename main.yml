@@ -6,7 +6,7 @@
   roles:
   - Juniper.junos
   tasks:
-  - name: Show interfaces
+  - name: SHOW INTERFACES TERSE
     junos_command:
       commands: show interfaces terse
     register: interfaces
@@ -15,16 +15,17 @@
 #      var: interfaces
     tags: interfaces
  
-  - name: Show routing table
+  - name: SHOW ROUTE
     vars:
     - routes: 0
     junos_command:
       commands: show route
     register: routes
-
-    tags: route  
+    tags: route
+    
   - name: Print output
     debug:
       var: 
       - routes.stdout_lines
       - interfaces.stdout
+    tags: print
