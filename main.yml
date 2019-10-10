@@ -12,7 +12,7 @@
     register: variable
   - name: Print version
     debug:
-      var: variable.stdout_lines
+      var: variable.stdout
     tags: interfaces
     
   - name: Show routing table
