@@ -8,24 +8,25 @@
   tasks:
   - name: SHOW INTERFACES TERSE
     block:
-#    - name: SHOW INTERFACES TERSE
-      junos_command:
-        commands: show interfaces terse
-      register: interfaces
-    - name: Print state of interfaces
-      debug:
-        var: interfaces 
-      tags: interfaces
+      - name: SHOW INTERFACES TERSE
+        junos_command:
+          commands: show interfaces terse
+        register: interfaces
+      - name: Print state of interfaces
+        debug:
+          var: interfaces 
+        tags: interfaces
  
- - name: SHOW ROUTE
+  - name: SHOW ROUTE
     block:
-      junos_command:
-        commands: show route
-      register: routes
-    - name: Print output
-      debug:
-        var: routes
-      tags: route
+      - name: SHOW ROUTE
+        junos_command:
+          commands: show route
+        register: routes
+      - name: Print output
+        debug:
+          var: routes
+        tags: route
     
 
 #    tags: print
