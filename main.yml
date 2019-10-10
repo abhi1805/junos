@@ -9,3 +9,7 @@
   - name: Test role
     junos_command:
       commands: show version
+    register: variable
+  - name: Print version
+    debug:
+      var: variable
