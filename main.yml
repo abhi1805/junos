@@ -9,17 +9,17 @@
   - name: Show interfaces
     junos_command:
       commands: show interfaces terse
-    register: variable
+    register: interfaces
   - name: Print state of interfaces
     debug:
-      var: variable
+      var: interfaces
     tags: interfaces
  
   - name: Show routing table
     junos_command:
       commands: show route
-    register: variable1
+    register: routes
   - name: Print routing table
     debug:
-      var: variable1
+      var: routes
     tags: route  
