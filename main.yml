@@ -17,10 +17,9 @@
   - name: SHOW ROUTE
     junos_command:
       commands: show route
-    register: interfaces
+    register: route
   - name: Print output
-    debug:
-      var: interfaces
+  - debug: var=route
     tags: route
     
 
