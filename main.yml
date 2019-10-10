@@ -6,7 +6,6 @@
   roles:
   - Juniper.junos
   tasks:
-  block:
   - name: Show interfaces
     junos_command:
       commands: show interfaces terse
@@ -15,12 +14,12 @@
     debug:
       var: variable
     tags: interfaces
-  block:  
+ 
   - name: Show routing table
     junos_command:
       commands: show route
-    register: variable
+    register: variable1
   - name: Print routing table
     debug:
-      var: variable
+      var: variable1
     tags: route  
