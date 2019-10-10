@@ -18,7 +18,7 @@
     junos_command:
       commands: show route
     register: route
-  - name: Print output
+#  - name: Print output
   - debug: var=route
     tags: route
     
