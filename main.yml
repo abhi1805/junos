@@ -6,25 +6,27 @@
   roles:
   - Juniper.junos
   tasks:
-  - name: SHOW INTERFACES TERSE
-    junos_command:
-      commands: show interfaces terse
-    register: interfaces
-  - name: Print state of interfaces
-    debug:
-      msg: "{{ interfaces }}"
-    tags: interfaces
- 
-  - name: SHOW ROUTE
-    vars:
-    - routes: 0
-    junos_command:
-      commands: show route
-    register: routes
-  - name: Print output
-    debug:
-      msg: "{{ routes }}"
-    tags: route
+  block:
+    - name: SHOW INTERFACES TERSE
+      junos_command:
+        commands: show interfaces terse
+      register: interfaces
+    - name: Print state of interfaces
+      debug:
+        var: interfaces 
+      tags: interfaces
+  
+  block:
+    - name: SHOW ROUTE
+      vars:
+      - routes: 0
+      junos_command:
+        commands: show route
+      register: routes
+    - name: Print output
+      debug:
+        var: routes
+      tags: route
     
 
 #    tags: print
