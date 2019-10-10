@@ -26,5 +26,5 @@
   - name: Print output
     debug:
       var: 
-      - routes
-      - interfaces
+      - routes.stdout_lines
+      - interfaces.stdout
