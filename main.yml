@@ -16,6 +16,8 @@
     tags: interfaces
  
   - name: Show routing table
+    vars:
+    - routes: 0
     junos_command:
       commands: show route
     register: routes
