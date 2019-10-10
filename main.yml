@@ -10,9 +10,9 @@
     junos_command:
       commands: show interfaces terse
     register: interfaces
-  - name: Print state of interfaces
-    debug:
-      var: interfaces
+#  - name: Print state of interfaces
+#    debug:
+#      var: interfaces
     tags: interfaces
  
   - name: Show routing table
@@ -21,7 +21,10 @@
     junos_command:
       commands: show route
     register: routes
-  - name: Print routing table
-    debug:
-      var: routes
+
     tags: route  
+  - name: Print output
+    debug:
+      var: 
+      - routes
+      - interfaces
