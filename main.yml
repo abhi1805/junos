@@ -10,9 +10,8 @@
     junos_command:
       commands: show interfaces terse
     register: interfaces
-  - name: Print state of interfaces
-    debug:
-      var: interfaces
+#  - name: Print state of interfaces
+  - debug: var=interfaces
     tags: interfaces
  
   - name: SHOW ROUTE
