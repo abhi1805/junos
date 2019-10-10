@@ -7,5 +7,5 @@
   - Juniper.junos
   tasks:
   - name: Test role
-    junos_config:
-      backup: yes
+    junos_command:
+      commands: show version
