@@ -5,28 +5,29 @@
   gather_facts: false
   roles:
   - Juniper.junos
-  tasks:
-  block:
-    - name: SHOW INTERFACES TERSE
-      junos_command:
-        commands: show interfaces terse
-      register: interfaces
-    - name: Print state of interfaces
-      debug:
-        var: interfaces 
-      tags: interfaces
   
-  block:
-    - name: SHOW ROUTE
-      vars:
-      - routes: 0
-      junos_command:
-        commands: show route
-      register: routes
-    - name: Print output
-      debug:
-        var: routes
-      tags: route
+  tasks:
+  - name: SHOW INTERFACES TERSE
+    junos_command:
+      commands: show interfaces terse
+    register: interfaces
+#  - name: Print state of interfaces
+#    debug:
+#      var: interfaces 
+    tags: interfaces
+  
+  - name: SHOW ROUTE
+    junos_command:
+      commands: show route
+    register: routes
+#  - name: Print output
+#    debug:
+#      var: routes
+    tags: route
     
-
-#    tags: print
+  - name: Print
+    debug:
+      msg:
+      - "{{ interfaces }}"
+      - "{{ routes }}"
+    tags: print
