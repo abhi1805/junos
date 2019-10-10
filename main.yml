@@ -1,6 +1,6 @@
 ---
 - name: test playbook
-  hosts: all
+  hosts: '{{ edge }}'
   connection: netconf
   gather_facts: false
   roles:
