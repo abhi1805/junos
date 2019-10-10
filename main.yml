@@ -7,26 +7,22 @@
   - Juniper.junos
   tasks:
   - name: SHOW INTERFACES TERSE
-    block:
-      - name: SHOW INTERFACES TERSE
-        junos_command:
-          commands: show interfaces terse
-        register: interfaces
-      - name: Print state of interfaces
-        debug:
-          var: interfaces 
-        tags: interfaces
+    junos_command:
+      commands: show interfaces terse
+    register: interfaces
+  - name: Print state of interfaces
+    debug:
+      var: interfaces
+    tags: interfaces
  
   - name: SHOW ROUTE
-    block:
-      - name: SHOW ROUTE
-        junos_command:
-          commands: show route
-        register: routes
-      - name: Print output
-        debug:
-          var: routes
-        tags: route
+    junos_command:
+      commands: show route
+    register: interfaces
+  - name: Print output
+    debug:
+      var: interfaces
+    tags: route
     
 
 #    tags: print
