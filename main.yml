@@ -15,7 +15,7 @@
  
   - name: SHOW ROUTE
     junos_command:
-      commands: show route
+      commands: show version
     register: output
     tags: route
     
