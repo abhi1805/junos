@@ -21,5 +21,5 @@
     
   - name: Print output
     debug: 
-      var: output
+      var: output.stdout_lines
     tags: print
