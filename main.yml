@@ -7,9 +7,9 @@
   - Juniper.junos
   
   tasks:
-  - name: SHOW INTERFACES TERSE
+  - name: SHOW BGP
     junos_command:
-      commands: show interfaces terse
+      commands: show route protocol bgp terse
     register: output
     tags: interfaces
  
